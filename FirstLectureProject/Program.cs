@@ -1,9 +1,9 @@
-﻿namespace FirstLectureProject {
+﻿namespace Assignemnt2 {
     internal class Program {
         static void Main(string[] args) {
-            //AskForName();
-            //AddTwoNumbers();
-            //AddThreeNumbersWithAvg();
+            AskForName();
+            AddTwoNumbers();
+            AddThreeNumbersWithAvg();
             PrintClosestIntFromDecimal();
         }
 
@@ -42,7 +42,7 @@
         private static void AskForName() {
             Console.WriteLine("Whats your name?");
             string name = Console.ReadLine();
-            Console.WriteLine("Hello {2} {2} {2}, ", name, 2, "test");
+            Console.WriteLine($"Hello {name}");
         }
 
 
