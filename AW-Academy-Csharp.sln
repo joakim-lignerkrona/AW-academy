@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning4", "Övning4\Övnin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning5-Exceptions", "Övning5-Exceptions\Övning5-Exceptions.csproj", "{BCFAF72D-466D-4143-A4B0-19D701A7C8D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Övning6-switches", "Övning6-switches\Övning6-switches.csproj", "{AC168B78-34D3-4D09-8646-9089CED44CF3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{BCFAF72D-466D-4143-A4B0-19D701A7C8D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCFAF72D-466D-4143-A4B0-19D701A7C8D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCFAF72D-466D-4143-A4B0-19D701A7C8D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC168B78-34D3-4D09-8646-9089CED44CF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC168B78-34D3-4D09-8646-9089CED44CF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC168B78-34D3-4D09-8646-9089CED44CF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC168B78-34D3-4D09-8646-9089CED44CF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
