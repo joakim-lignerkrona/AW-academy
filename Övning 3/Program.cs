@@ -43,22 +43,8 @@
             Console.Clear();
             double jukkasjärviNumeric;
             double svedalaNumeric;
-            try {
-                jukkasjärviNumeric = double.Parse(jukkasjärvi);
-
-            }
-            catch(Exception) {
-                jukkasjärviNumeric = 0;
-
-            }
-            try {
-                svedalaNumeric = double.Parse(svedala);
-            }
-            catch(Exception) {
-
-                svedalaNumeric = 0;
-            }
-
+            jukkasjärviNumeric = double.Parse(jukkasjärvi);
+            svedalaNumeric = double.Parse(svedala);
 
             if(jukkasjärviNumeric > svedalaNumeric) {
                 Console.WriteLine("Svedala är kallast");
