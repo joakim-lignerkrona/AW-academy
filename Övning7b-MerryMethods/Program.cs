@@ -12,9 +12,8 @@
             var input = Console.ReadLine();
             methodBench.SecondMethod(input);
             Console.Write("use upper case? (U): ");
-            var key = Console.ReadLine();
-            bool userWantsUpper = key == "U";
-            methodBench.ThirdMethod(input, userWantsUpper);
+            var key = Console.ReadLine().ToUpper();
+            methodBench.ThirdMethod(input, key == "U");
             bool screaming = methodBench.FourthMethod();
             methodBench.ThirdMethod(input, screaming);
             var (name, haslongName) = methodBench.SixthMethod();
