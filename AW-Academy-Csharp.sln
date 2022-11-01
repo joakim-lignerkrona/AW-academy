@@ -37,7 +37,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassesDemo", "ClassesDemo\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boolsk Algebra", "Boolsk Algebra\Boolsk Algebra.csproj", "{70A676FB-737E-4F5C-B741-97AC7FBD06B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiDemintionalArray", "MultiDemintionalArray\MultiDemintionalArray.csproj", "{B96E1DD3-4D1B-4E03-A08A-27EAE6F7FA85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Övning9-MultiDemintionalArray", "MultiDemintionalArray\Övning9-MultiDemintionalArray.csproj", "{B96E1DD3-4D1B-4E03-A08A-27EAE6F7FA85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
