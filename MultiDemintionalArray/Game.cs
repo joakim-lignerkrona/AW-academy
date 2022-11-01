@@ -6,34 +6,25 @@ using System.Threading.Tasks;
 
 namespace MultiDemintionalArray {
     internal class Game {
-        static bool debug = false;
-        public static void RunGame() {
-            RunGame(4);
-        }
-        public static void RunGame(int square) {
-            RunGame(square, square);
-        }
+        static bool debug = true;
+        CoordinateState[,] gameBoard;
 
-        public static void RunGame(int x, int y) {
-            CoordinateState[,] gameBoard = new CoordinateState[x, y];
-            bool gameIsRunning = true;
-
+        public Game(int sizeX, int sizeY) {
+            gameBoard = new CoordinateState[sizeX, sizeY];
             InitiateGameboard(gameBoard);
-            PrintBoard(gameBoard);
-
-            while(gameIsRunning) {
-                string input = GetUserInput(gameBoard);
-                ExecuteMove(input, gameBoard);
-                Console.Clear();
-                PrintBoard(gameBoard);
-                gameIsRunning = !GameIsOver(gameBoard);
-            }
-
-            Console.WriteLine("You sank all ships!");
-
         }
 
-        private static bool GameIsOver(CoordinateState[,] gameBoard) {
+        public void Turn() {
+
+            Console.Clear();
+            PrintBoard(gameBoard);
+            string input = GetUserInput(gameBoard);
+            ExecuteMove(input, gameBoard);
+            Console.Clear();
+            PrintBoard(gameBoard);
+        }
+
+        public static bool GameIsOver(CoordinateState[,] gameBoard) {
             bool gameOver = true;
             for(int y = 0; y < gameBoard.GetLength(1); y++) {
                 for(int x = 0; x < gameBoard.GetLength(0); x++) {
@@ -46,7 +37,7 @@ namespace MultiDemintionalArray {
             return gameOver;
         }
 
-        private static void ExecuteMove(string input, CoordinateState[,] gameBoard) {
+        public static void ExecuteMove(string input, CoordinateState[,] gameBoard) {
             var x = int.Parse(input.Substring(1, 1)) - 1;
             var y = LetterToNumber(input.Substring(0, 1).ToCharArray()[0]) - 1;
 
@@ -59,31 +50,36 @@ namespace MultiDemintionalArray {
 
         }
 
-        private static string GetUserInput(CoordinateState[,] gameBoard) {
+        public static string GetUserInput(CoordinateState[,] gameBoard) {
             bool validInput = false;
             string inputCode = "";
             while(!validInput) {
+
                 Console.Write("Enter a coordinate to fire at: ");
                 var input = Console.ReadLine().ToUpper();
-                int first = 0;
-                var firstIsNumber = int.TryParse(input.Substring(0, 1), out first);
-                int second = 0;
-                var secondIsNumber = int.TryParse(input.Substring(1, 1), out second);
-                if(input.Length == 2 && (firstIsNumber || secondIsNumber) && !(firstIsNumber && secondIsNumber)) {
-                    validInput = true;
-                    if(!firstIsNumber) {
-                        inputCode = input;
-                        if(gameBoard.GetLength(0) < LetterToNumber(input.Substring(0, 1).ToCharArray()[0]) || gameBoard.GetLength(1) < second) {
-                            validInput = false;
-                        }
-                    }
-                    else {
-                        inputCode = input.Substring(1, 1) + input.Substring(0, 1);
-                        if(gameBoard.GetLength(1) < LetterToNumber(input.Substring(1, 1).ToCharArray()[0]) || gameBoard.GetLength(0) < first) {
-                            validInput = false;
-                        }
-                    }
+                if(input.Length == 2) {
 
+
+                    int first = 0;
+                    var firstIsNumber = int.TryParse(input.Substring(0, 1), out first);
+                    int second = 0;
+                    var secondIsNumber = int.TryParse(input.Substring(1, 1), out second);
+                    if((firstIsNumber || secondIsNumber) && !(firstIsNumber && secondIsNumber)) {
+                        validInput = true;
+                        if(!firstIsNumber) {
+                            inputCode = input;
+                            if(gameBoard.GetLength(0) < LetterToNumber(input.Substring(0, 1).ToCharArray()[0]) || gameBoard.GetLength(1) < second) {
+                                validInput = false;
+                            }
+                        }
+                        else {
+                            inputCode = input.Substring(1, 1) + input.Substring(0, 1);
+                            if(gameBoard.GetLength(1) < LetterToNumber(input.Substring(1, 1).ToCharArray()[0]) || gameBoard.GetLength(0) < first) {
+                                validInput = false;
+                            }
+                        }
+
+                    }
                 }
 
                 if(!validInput)
@@ -92,10 +88,10 @@ namespace MultiDemintionalArray {
             return inputCode;
         }
 
-        private static void PrintBoard(CoordinateState[,] gameBoard) {
+        public static void PrintBoard(CoordinateState[,] gameBoard) {
             Console.Write($"    ");
             for(int x = 0; x < gameBoard.GetLength(0); x++) {
-                Console.Write($"[{x + 1}] ");
+                Console.Write($"[{(x == 9 ? (0) : (x + 1))}] ");
             }
             Console.WriteLine();
             for(int y = 0; y < gameBoard.GetLength(1); y++) {
@@ -118,7 +114,7 @@ namespace MultiDemintionalArray {
             }
         }
 
-        private static void InitiateGameboard(CoordinateState[,] gameBoard) {
+        public static void InitiateGameboard(CoordinateState[,] gameBoard) {
             int xCoordinate = debug ? new Random(14).Next(gameBoard.GetLength(0)) : new Random().Next(gameBoard.GetLength(0));
             int yCoordinate = debug ? new Random(15).Next(gameBoard.GetLength(1)) : new Random().Next(gameBoard.GetLength(1));
             for(int y = 0; y < gameBoard.GetLength(1); y++) {

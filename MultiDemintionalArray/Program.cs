@@ -1,134 +1,39 @@
 ﻿namespace MultiDemintionalArray {
     internal class Program {
-        static bool debug = false;
+        static int numberOfPlayers = 0;
         static void Main(string[] args) {
-            CoordinateState[,] gameBoard = new CoordinateState[4, 4];
-            bool gameIsRunning = true;
-
-            InitiateGameboard(gameBoard);
-            PrintBoard(gameBoard);
-
-            while(gameIsRunning) {
-                string input = GetUserInput(gameBoard);
-                ExecuteMove(input, gameBoard);
-                Console.Clear();
-                PrintBoard(gameBoard);
-                gameIsRunning = !GameIsOver(gameBoard);
+            bool validPlayers = false;
+            while(!validPlayers) {
+                validPlayers = InitializeGame();
             }
-
-            Console.WriteLine("You sank all ships!");
-
+            Game[] games = new Game[numberOfPlayers];
+            for(int i = 0; i < games.Length; i++) {
+                games[i] = new Game(3, 3);
+            }
+            games[0].Turn();
         }
 
-        private static bool GameIsOver(CoordinateState[,] gameBoard) {
-            bool gameOver = true;
-            for(int y = 0; y < gameBoard.GetLength(1); y++) {
-                for(int x = 0; x < gameBoard.GetLength(0); x++) {
-
-                    if(gameBoard[x, y] == CoordinateState.Ship) {
-                        gameOver = false;
-                    }
-                }
+        private static bool InitializeGame() {
+            bool valid = false;
+            Console.Clear();
+            Console.WriteLine("How manny players are there?");
+            var inputString = Console.ReadLine();
+            valid = int.TryParse(inputString, out numberOfPlayers);
+            if((numberOfPlayers > 4 && numberOfPlayers < 0) || !valid) {
+                return false;
             }
-            return gameOver;
-        }
+            Console.WriteLine("Whats size of game board do you want? (min: 2x2, max: 9x9)");
+            inputString = Console.ReadLine();
+            var splitSting = inputString.Split('x');
+            if(splitSting.Length == 2) {
+                Console.WriteLine($"{splitSting[0]}/{splitSting[1]}");
+                int? number;
 
-        private static void ExecuteMove(string input, CoordinateState[,] gameBoard) {
-            var x = int.Parse(input.Substring(1, 1)) - 1;
-            var y = LetterToNumber(input.Substring(0, 1).ToCharArray()[0]) - 1;
 
-            if(gameBoard[x, y] == CoordinateState.Empty) {
-                gameBoard[x, y] = CoordinateState.Miss;
-            }
-            if(gameBoard[x, y] == CoordinateState.Ship) {
-                gameBoard[x, y] = CoordinateState.Hit;
             }
 
-        }
+            return false;
 
-        private static string GetUserInput(CoordinateState[,] gameBoard) {
-            bool validInput = false;
-            string inputCode = "";
-            while(!validInput) {
-                Console.Write("Enter a coordinate to fire at: ");
-                var input = Console.ReadLine().ToUpper();
-                int first = 0;
-                var firstIsNumber = int.TryParse(input.Substring(0, 1), out first);
-                int second = 0;
-                var secondIsNumber = int.TryParse(input.Substring(1, 1), out second);
-                if(input.Length == 2 && (firstIsNumber || secondIsNumber) && !(firstIsNumber && secondIsNumber)) {
-                    validInput = true;
-                    if(!firstIsNumber) {
-                        inputCode = input;
-                        if(gameBoard.GetLength(0) < LetterToNumber(input.Substring(0, 1).ToCharArray()[0]) || gameBoard.GetLength(1) < second) {
-                            validInput = false;
-                        }
-                    }
-                    else {
-                        inputCode = input.Substring(1, 1) + input.Substring(0, 1);
-                        if(gameBoard.GetLength(1) < LetterToNumber(input.Substring(1, 1).ToCharArray()[0]) || gameBoard.GetLength(0) < first) {
-                            validInput = false;
-                        }
-                    }
-
-                }
-
-                if(!validInput)
-                    Console.WriteLine("Invalid input, try again!");
-            }
-            return inputCode;
-        }
-
-        private static void PrintBoard(CoordinateState[,] gameBoard) {
-            Console.Write($"    ");
-            for(int x = 0; x < gameBoard.GetLength(0); x++) {
-                Console.Write($"[{x + 1}] ");
-            }
-            Console.WriteLine();
-            for(int y = 0; y < gameBoard.GetLength(1); y++) {
-                Console.Write($"[{NumberToLetter(y + 1)}]");
-                for(int x = 0; x < gameBoard.GetLength(0); x++) {
-                    if(gameBoard[x, y] == CoordinateState.Ship && debug) {
-                        Console.Write("  S ");
-                    }
-                    else if(gameBoard[x, y] == CoordinateState.Miss) {
-                        Console.Write("  * ");
-                    }
-                    else if(gameBoard[x, y] == CoordinateState.Hit) {
-                        Console.Write("  X ");
-                    }
-                    else {
-                        Console.Write("  ~ ");
-                    }
-                }
-                Console.WriteLine();
-            }
-        }
-
-        private static void InitiateGameboard(CoordinateState[,] gameBoard) {
-            int xCoordinate = debug ? new Random(14).Next(gameBoard.GetLength(0)) : new Random().Next(gameBoard.GetLength(0));
-            int yCoordinate = debug ? new Random(15).Next(gameBoard.GetLength(1)) : new Random().Next(gameBoard.GetLength(1));
-            for(int y = 0; y < gameBoard.GetLength(1); y++) {
-                for(int x = 0; x < gameBoard.GetLength(0); x++) {
-
-                    if(xCoordinate == x && yCoordinate == y) {
-                        gameBoard[x, y] = CoordinateState.Ship;
-                    }
-                    else {
-
-                        gameBoard[x, y] = CoordinateState.Empty;
-                    }
-
-
-                }
-            }
-        }
-
-        static char NumberToLetter(int number) {
-            return (char)(number + 64);
-        }
-        static int LetterToNumber(char letter) {
-            return (int)letter - 64;
         }
     }
 }
