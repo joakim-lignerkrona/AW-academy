@@ -1,8 +1,21 @@
-﻿namespace MultiDemintionalArray {
-    internal class Program {
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MultiDemintionalArray {
+    internal class Game {
         static bool debug = false;
-        static void Main(string[] args) {
-            CoordinateState[,] gameBoard = new CoordinateState[4, 4];
+        public static void RunGame() {
+            RunGame(4);
+        }
+        public static void RunGame(int square) {
+            RunGame(square, square);
+        }
+
+        public static void RunGame(int x, int y) {
+            CoordinateState[,] gameBoard = new CoordinateState[x, y];
             bool gameIsRunning = true;
 
             InitiateGameboard(gameBoard);
