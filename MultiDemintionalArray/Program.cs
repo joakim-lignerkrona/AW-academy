@@ -27,7 +27,7 @@
             var splitSting = inputString.Split('x');
             if(splitSting.Length == 2) {
                 Console.WriteLine($"{splitSting[0]}/{splitSting[1]}");
-                int? number;
+                // int? number;
 
 
             }
