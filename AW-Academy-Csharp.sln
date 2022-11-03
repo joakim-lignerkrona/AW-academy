@@ -3,33 +3,33 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning 2", "Övning 2\Övning 2.csproj", "{B37F50EA-BE13-45DF-AC3A-6BAD8AB5E549}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning 02", "Övning 2\Övning 02.csproj", "{B37F50EA-BE13-45DF-AC3A-6BAD8AB5E549}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning 3", "Övning 3\Övning 3.csproj", "{E7080F83-E915-4FB7-BA65-3BAE916C3069}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning 03", "Övning 3\Övning 03.csproj", "{E7080F83-E915-4FB7-BA65-3BAE916C3069}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning4", "Övning4\Övning4.csproj", "{C4427307-5425-43A3-BDBA-C1176DABEC2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning 04", "Övning4\Övning 04.csproj", "{C4427307-5425-43A3-BDBA-C1176DABEC2E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning5-Exceptions", "Övning5-Exceptions\Övning5-Exceptions.csproj", "{BCFAF72D-466D-4143-A4B0-19D701A7C8D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning 05 -Exceptions", "Övning5-Exceptions\Övning 05 -Exceptions.csproj", "{BCFAF72D-466D-4143-A4B0-19D701A7C8D4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning6-switches", "Övning6-switches\Övning6-switches.csproj", "{AC168B78-34D3-4D09-8646-9089CED44CF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning 06 -switches", "Övning6-switches\Övning 06 -switches.csproj", "{AC168B78-34D3-4D09-8646-9089CED44CF3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enums", "Enums\Enums.csproj", "{B583C68A-2DCE-46B9-8F2B-E02155C72F25}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning7-Metoder", "Övning7-Metoder\Övning7-Metoder.csproj", "{CB25EE3B-C153-48D7-A2DB-2ED4E9EC2797}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning 07 -Metoder", "Övning7-Metoder\Övning 07 -Metoder.csproj", "{CB25EE3B-C153-48D7-A2DB-2ED4E9EC2797}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning7b-MerryMethods", "Övning7b-MerryMethods\Övning7b-MerryMethods.csproj", "{FA7A4367-8B4B-443E-B16F-89E110C5B392}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning 07b -MerryMethods", "Övning7b-MerryMethods\Övning 07b -MerryMethods.csproj", "{FA7A4367-8B4B-443E-B16F-89E110C5B392}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arrays", "Arrays\Arrays.csproj", "{99226B5C-A462-436E-87A8-E17168F4BF9A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning8-Arrays", "Övning8-Arrays\Övning8-Arrays.csproj", "{10E5CB99-8F29-429B-B810-453E7FE6E0FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning 08 -Arrays", "Övning8-Arrays\Övning 08 -Arrays.csproj", "{10E5CB99-8F29-429B-B810-453E7FE6E0FE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrayCodealong", "ArrayCodealong\ArrayCodealong.csproj", "{B4F6A436-FAD3-49C3-A2D3-0B24CF1D8155}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning10-Arrays", "Övning10-Arrays\Övning10-Arrays.csproj", "{C860A9B9-37B4-43C5-8D59-51C011D4E582}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning 10 -Arrays", "Övning10-Arrays\Övning 10 -Arrays.csproj", "{C860A9B9-37B4-43C5-8D59-51C011D4E582}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JockanNiceHaves", "JockanUI\JockanNiceHaves.csproj", "{20CE8D68-DFC4-4D10-95E3-8DE11F1E504C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning6-Fortsättning", "Övning6-Fortsättning\Övning6-Fortsättning.csproj", "{17CD8421-955C-4FF2-8C3E-7DAB31374393}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning 06 -Fortsättning", "Övning6-Fortsättning\Övning 06 -Fortsättning.csproj", "{17CD8421-955C-4FF2-8C3E-7DAB31374393}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransactionDemo", "TransactionDemo\TransactionDemo.csproj", "{0ACB7B44-2F1E-4B1F-B53D-C3B5C40AFE6F}"
 EndProject
@@ -37,7 +37,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassesDemo", "ClassesDemo\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boolsk Algebra", "Boolsk Algebra\Boolsk Algebra.csproj", "{70A676FB-737E-4F5C-B741-97AC7FBD06B6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning9-MultiDemintionalArray", "MultiDemintionalArray\Övning9-MultiDemintionalArray.csproj", "{B96E1DD3-4D1B-4E03-A08A-27EAE6F7FA85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning 09 -MultiDemintionalArray", "MultiDemintionalArray\Övning 09 -MultiDemintionalArray.csproj", "{B96E1DD3-4D1B-4E03-A08A-27EAE6F7FA85}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kladd", "Kladd\Kladd.csproj", "{03E4FAF0-608C-4B16-8397-7B324EBA281F}"
 EndProject
