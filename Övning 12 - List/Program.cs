@@ -4,6 +4,7 @@
         static bool runApp = true;
         static ContactList contacts = new ContactList();
         static void Main(string[] args) {
+            contacts.FillWithSampleData();
             while(runApp) {
                 int selection = ShowMainMenu();
                 try {
@@ -34,6 +35,9 @@
                 case 3:
                     contacts.RemoveContact();
                     break;
+                case 4:
+                    contacts.SortContacts();
+                    break;
                 case 22:
                     break;
                 default:
@@ -45,7 +49,7 @@
 
         private static void ConfirmExit() {
             Console.Write("Are you sure you want to exit? (Y/n): ");
-            string? optionConfirmed = Console.ReadLine();
+            string optionConfirmed = Console.ReadLine();
             if(optionConfirmed == "y" || optionConfirmed == "Y")
                 runApp = false;
         }
@@ -59,6 +63,7 @@
             Console.WriteLine("1. Add Contact");
             Console.WriteLine("2. List contacts");
             Console.WriteLine("3. Remove contact");
+            Console.WriteLine("4. Sort");
             Console.WriteLine("0. Exit application");
 
             try {
@@ -77,10 +82,5 @@
             }
 
         }
-
-
-
-
-
     }
 }

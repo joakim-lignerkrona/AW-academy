@@ -5,7 +5,11 @@
     <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>Övning_12___List</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JockanUI\JockanNiceHaves.csproj" />
+  </ItemGroup>
 
 </Project>

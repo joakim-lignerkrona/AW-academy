@@ -8,6 +8,24 @@ using System.Threading.Tasks;
 namespace Övning_12___List {
     internal class ContactList {
         public List<Person> contacts = new List<Person>();
+        public void FillWithSampleData(int amount = 30) {
+            for(int i = 0; i < amount; i++) {
+                contacts.Add(new Person());
+            }
+        }
+        public void ChangeContactFirstName(int index, string newFirstName) {
+            contacts[index].FistName = newFirstName;
+        }
+        public void ChangeContactLastName(int index, string newLastName) {
+            contacts[index].LastName = newLastName;
+        }
+        public void ChangeContactEmail(int index, string newEmail) {
+            contacts[index].Email = newEmail;
+        }
+        public void ChangeContactPhone(int index, string newPhone) {
+            contacts[index].Phone = newPhone;
+        }
+
         public void AddContact() {
             Console.WriteLine("Add contact");
             Console.Write("First name: ");
