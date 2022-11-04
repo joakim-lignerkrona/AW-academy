@@ -49,6 +49,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListDemo", "ListDemo\ListDe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning 12 - List", "Övning 12 - List\Övning 12 - List.csproj", "{C87319B0-34A9-4EBF-AB22-ACEAA8A1F389}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyClassLibrary", "MyClassLibrary\MyClassLibrary.csproj", "{7BFCC625-185C-4424-B48B-06D50EC83F4B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +149,10 @@ Global
 		{C87319B0-34A9-4EBF-AB22-ACEAA8A1F389}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C87319B0-34A9-4EBF-AB22-ACEAA8A1F389}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C87319B0-34A9-4EBF-AB22-ACEAA8A1F389}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BFCC625-185C-4424-B48B-06D50EC83F4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BFCC625-185C-4424-B48B-06D50EC83F4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BFCC625-185C-4424-B48B-06D50EC83F4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BFCC625-185C-4424-B48B-06D50EC83F4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

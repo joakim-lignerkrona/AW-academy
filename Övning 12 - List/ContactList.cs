@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Övning_12___List {
@@ -59,6 +60,22 @@ namespace Övning_12___List {
             Console.WriteLine();
 
             Console.ReadLine();
+        }
+
+        public void SaveToFile() {
+            string json = JsonSerializer.Serialize(contacts);
+            File.WriteAllText(@"C:\Users\jocka\tmp\Övning12osv\contacts.json", json);
+        }
+        public bool LoadFromJsonSerializer() {
+            try {
+                string json = File.ReadAllText(@"C:\Users\jocka\tmp\Övning12osv\contacts.json");
+                contacts = JsonSerializer.Deserialize<List<Person>>(json);
+                return true;
+            }
+            catch(Exception) {
+                return false;
+            }
+
         }
 
         public void RemoveContact() {
