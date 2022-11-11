@@ -1,9 +1,6 @@
-﻿namespace ArrayCodealong
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
+﻿namespace ArrayCodealong {
+    internal class Program {
+        static void Main(string[] args) {
             char[] charArray = new char[5];
             charArray[4] = 'a';
             charArray[1] = 'b';
@@ -18,16 +15,12 @@
 
         }
 
-        private static void BubbleSortCharArray(char[] charArray)
-        {
-            for (int j = 0; j < charArray.Length; j++)
-            {
-                for (int i = 1; i < charArray.Length; i++)
-                {
+        private static void BubbleSortCharArray(char[] charArray) {
+            for(int j = 0; j < charArray.Length; j++) {
+                for(int i = 1; i < charArray.Length; i++) {
                     char name1 = charArray[i];
                     char name2 = charArray[i - 1];
-                    if (name1.CompareTo(name2) < name2.CompareTo(name1))
-                    {
+                    if(name1.CompareTo(name2) < name2.CompareTo(name1)) {
                         charArray[i] = name2;
                         charArray[i - 1] = name1;
                     }
@@ -35,15 +28,11 @@
             }
         }
 
-        private static void SortCharArray(char[] charArray)
-        {
-            for (int i = 0; i < charArray.Length; i++)
-            {
+        private static void SortCharArray(char[] charArray) {
+            for(int i = 0; i < charArray.Length; i++) {
                 int lowest = i;
-                for (int j = i + 1; j < charArray.Length; j++)
-                {
-                    if (charArray[lowest].CompareTo(charArray[j]) > charArray[j].CompareTo(charArray[lowest]))
-                    {
+                for(int j = i + 1; j < charArray.Length; j++) {
+                    if(charArray[lowest].CompareTo(charArray[j]) > charArray[j].CompareTo(charArray[lowest])) {
                         lowest = j;
                     }
 
@@ -55,10 +44,8 @@
             }
         }
 
-        private static void PrintCharArray(char[] charArray)
-        {
-            for (int i = 0; i < charArray.Length; i++)
-            {
+        private static void PrintCharArray(char[] charArray) {
+            for(int i = 0; i < charArray.Length; i++) {
                 Console.Write(charArray[i] + " ");
             }
             Console.WriteLine();

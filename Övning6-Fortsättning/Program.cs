@@ -1,4 +1,4 @@
-﻿
+﻿using Spectre.Console;
 using JockanUI;
 
 namespace Övning6_Fortsättning {
@@ -11,31 +11,48 @@ namespace Övning6_Fortsättning {
         static void Main(string[] args) {
             bool running = true;
             while(running) {
-                DisplayMenu();
-                running = SelectFunction();
+                //DisplayMenu();
+                running = SelectFunction(NewSelectFunction());
+
             }
         }
 
-        private static bool SelectFunction() {
-            var key = Console.ReadKey(true);
+        private static string NewSelectFunction() {
             Console.Clear();
-            switch(key.Key) {
-                case ConsoleKey.W:
+            AnsiConsole.Write(new FigletText("ATM").Centered());
+            var selected = AnsiConsole.Prompt(
+                new SelectionPrompt<string>()
+                    .Title("What do you want to do?")
+                    .PageSize(4)
+                    .MoreChoicesText("[grey](Move up and down to reveal more choices)[/]")
+                    .AddChoices(new[] {
+                        "Deposit",
+                        "Withdraw",
+                        "Balance",
+                        "Exit"
+                    })
+            );
+            return selected;
+        }
+        private static bool SelectFunction(string selection) {
+            //var key = Console.ReadKey(true);
+            Console.Clear();
+            switch(selection) {
+                case "Withdraw":
                     Withdraw();
                     break;
-                case ConsoleKey.D:
+                case "Deposit":
                     Deposit();
                     break;
-                case ConsoleKey.B:
+                case "Balance":
                     Balance();
                     break;
-                case ConsoleKey.Q:
+                case "Exit":
                     return Quit();
 
                 default:
                     return true;
             }
-            Console.ReadLine();
             return true;
         }
 
@@ -48,22 +65,64 @@ namespace Övning6_Fortsättning {
             JUIMenu.ShowBoxMenu(new string[] { "[D]eposit", "[W]ithdraw", "[B]alance", "[Q]uit" });
         }
         private static bool Deposit() {
-            Console.WriteLine("Deposit");
-            double amount = 0;
-            bool parseSuccess = false;
-            while(!parseSuccess) {
-                parseSuccess = double.TryParse(Console.ReadLine(), out amount);
-            }
-            if(amount < 0) {
-                return false;
-            }
-            transactions[transactionID % transactions.Length] = new Transaction(transactionID++, TransactionType.Deposit, amount);
-            saldo += amount;
+            AnsiConsole.Write(new FigletText("Deposit").Centered());
+            var value = AnsiConsole.Prompt(
+    new TextPrompt<double>("Enter [green]amount[/] to be deposited: [blue](SEK)[/]")
+        .PromptStyle("green")
+        .ValidationErrorMessage("[red]That's not a valid amount[/]")
+        .Validate(amount => {
+            return amount switch {
+                <= 1 => ValidationResult.Error("[red]You must deposit at least 1 SEK[/]"),
 
+                _ => ValidationResult.Success(),
+            };
+        }));
+            saldo += value;
+            transactions[transactionID % transactions.Length] = new Transaction(transactionID++, TransactionType.Deposit, value);
             return true;
+
+
+            //Console.WriteLine("Deposit");
+            //double amount = 0;
+            //bool parseSuccess = false;
+            //while(!parseSuccess) {
+            //    parseSuccess = double.TryParse(Console.ReadLine(), out amount);
+            //}
+            //if(amount < 0) {
+            //    return false;
+            //}
+            //transactions[transactionID % transactions.Length] = new Transaction(transactionID++, TransactionType.Deposit, amount);
+            //saldo += amount;
+
+            //return true;
         }
 
         private static bool Withdraw() {
+
+            //        AnsiConsole.Render(new FigletText("Withdraw").Centered());
+            //        var value = AnsiConsole.Prompt(
+            //new TextPrompt<double>("Enter [green]amount[/] to be withdrawn: [blue](SEK)[/]")
+            //    .PromptStyle("green")
+            //    .ValidationErrorMessage("[red]That's not a valid amount[/]")
+            //    .Validate(amount => {
+            //        var success = ValidationResult.Success();
+            //        if(saldo < amount) {
+            //            success = ValidationResult.Error("[red]You don't have enough money[/]");
+            //        }
+            //        if(amount < 0) {
+            //            success = ValidationResult.Error("[red]You must deposit at least 1 SEK[/]");
+            //        }
+
+            //        return amount switch {
+            //            <= 1 => ValidationResult.Error("[red]You must deposit at least 1 SEK[/]"),
+            //            > saldo => 
+            //            _ => ValidationResult.Success(),
+            //        };
+            //    }));
+            //        saldo += value;
+            //        transactions[transactionID % transactions.Length] = new Transaction(transactionID++, TransactionType.Deposit, value);
+            //        return true;
+
             Console.WriteLine("Withdraw");
             double amount = 0;
             bool parseSuccess = false;
