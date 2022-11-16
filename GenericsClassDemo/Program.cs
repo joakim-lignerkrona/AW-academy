@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            ListOfPerson listOfPersons = new ListOfPerson()
+            GenericList<Person> listOfPersons = new GenericList<Person>()
             {
                 new Person("Jack", "Doe", 1972),
                 new Person("Jane", "Doe", 1971),

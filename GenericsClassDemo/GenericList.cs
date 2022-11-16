@@ -7,36 +7,36 @@ using System.Threading.Tasks;
 
 namespace GenericsClassDemo
 {
-    internal class GenericList<AnyType>
+    internal class GenericList<AnyType> : IEnumerable
     {
-        AnyType[] content;
+        AnyType[] collection;
         int arrayLength = 2;
         public int Count { get; private set; } = 0;
         public GenericList()
         {
-            content = new AnyType[arrayLength];
+            collection = new AnyType[arrayLength];
         }
 
-        public void Add(AnyType content)
+        public void Add(AnyType item)
         {
             if(Count == arrayLength)
             {
                 arrayLength *= 2;
-                Array.Resize(ref this.content, arrayLength);
+                Array.Resize(ref this.collection, arrayLength);
             }
-            this.content[Count++] = content;
+            this.collection[Count++] = item;
         }
         public AnyType this[int index]
         {
             get
             {
                 CheckIndexInRange(index);
-                return content[index];
+                return collection[index];
             }
             set
             {
                 CheckIndexInRange(index);
-                content[index] = value;
+                collection[index] = value;
             }
         }
 
@@ -50,17 +50,17 @@ namespace GenericsClassDemo
         {
             for(int i = 0; i < Count; i++)
             {
-                yield return content[i];
+                yield return collection[i];
             }
         }
-        public void Sort(Func<AnyType, AnyType, bool> compare)
+        public void Sort(Func<AnyType, AnyType, bool> comparer)
         {
             for(int i = 0; i < Count - 1; i++)
             {
                 var lowValIndex = i;
                 for(int j = i; j < Count; j++)
                 {
-                    if(compare(content[j], content[lowValIndex]))
+                    if(comparer(collection[j], collection[lowValIndex]))
                     {
                         lowValIndex = j;
                     }
@@ -68,9 +68,9 @@ namespace GenericsClassDemo
                 }
                 if(lowValIndex != i)
                 {
-                    var temp = content[i];
-                    content[i] = content[lowValIndex];
-                    content[lowValIndex] = temp;
+                    var temp = collection[i];
+                    collection[i] = collection[lowValIndex];
+                    collection[lowValIndex] = temp;
                 }
             }
         }
