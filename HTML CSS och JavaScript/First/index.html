@@ -5,17 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My first web</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+      integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
     <header>
       <nav>
-        <ul><li>hem
-
-        </li>
-        <li>om</li>
-        <li>kontakt</li>
-        <li>Butik</li></ul>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./page.html">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
       </nav>
+      <table>
+        <thead>
+          <tr>
+            <th>C1</th>
+            <th>C2</th>
+            <th>C3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+          </tr>
+        </tbody>
+      </table>
     </header>
+    <main>
+      <article>
+        <form action="./page.html" method="get">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" />
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" />
+          <input type="submit" value="Send" />
+        </form>
+      </article>
+      <article>
+        <div class="headings">
+          <h1>
+            Det här är antagligen en <span style="font-weight: bold">katt</span>
+          </h1>
+          <img src="https://loremflickr.com/640/360" />
+          <h2>Det här är en underrubrik</h2>
+          <h3>Det här är en h3</h3>
+        </div>
+      </article>
+    </main>
   </body>
 </html>
