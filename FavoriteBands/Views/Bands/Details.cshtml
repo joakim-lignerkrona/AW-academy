@@ -1,0 +1,17 @@
+﻿@using FavoriteBands.Models;
+@model Band
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <title>My Title</title>
+    </head>
+    <body>
+        <h1>@Model.Name</h1>
+        <img src="@Model.ImgPath" style="max-height: 250px" />
+        <p>
+        @Model.Description
+        </p>
+</body>
+</html>
